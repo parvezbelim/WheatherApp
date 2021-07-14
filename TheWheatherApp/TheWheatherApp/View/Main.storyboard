@@ -1,24 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3oJ-1q-t0v">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Settings-->
+        <scene sceneID="dwR-ts-rCG">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="SettingsVC" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WLd-g5-T21" customClass="SettingsVC" customModule="TheWheatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PSw-Ub-8vd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="5IB-OM-OnZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="dTz-6Z-SsL"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTH-jD-yob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1747.826086956522" y="543.75"/>
+        </scene>
+        <!--The Wheather App-->
+        <scene sceneID="YI5-3V-DXi">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" title="The Wheather App" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xp5-By-3AS" customClass="HomeVC" customModule="TheWheatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fAo-zZ-0Iu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-9C-5BW">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xp5-By-3AS" id="IjF-ge-qKa"/>
+                                    <outlet property="delegate" destination="xp5-By-3AS" id="wr4-Jo-Yc5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="er0-pw-NED"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VKf-9C-5BW" firstAttribute="top" secondItem="er0-pw-NED" secondAttribute="top" id="Ogp-2m-EdO"/>
+                            <constraint firstItem="er0-pw-NED" firstAttribute="trailing" secondItem="VKf-9C-5BW" secondAttribute="trailing" id="Tb2-HP-bYA"/>
+                            <constraint firstItem="er0-pw-NED" firstAttribute="bottom" secondItem="VKf-9C-5BW" secondAttribute="bottom" id="fdI-NZ-fvc"/>
+                            <constraint firstItem="VKf-9C-5BW" firstAttribute="leading" secondItem="er0-pw-NED" secondAttribute="leading" id="que-JC-g0Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="The Wheather App" largeTitleDisplayMode="always" id="45j-is-Hvi"/>
+                    <connections>
+                        <outlet property="tblCities" destination="VKf-9C-5BW" id="edt-MH-jcp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1O-8v-jyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747.826086956522" y="-251.11607142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OXa-gC-Qk7">
+            <objects>
+                <tabBarController id="3oJ-1q-t0v" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6eN-QH-dob">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Egg-0D-tBF" kind="relationship" relationship="viewControllers" id="gZd-LW-jyf"/>
+                        <segue destination="HQQ-9W-Ve4" kind="relationship" relationship="viewControllers" id="mnr-r9-NkT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Juc-b9-f0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-310" y="185"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kmf-sg-9Or">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Egg-0D-tBF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" selectedImage="bookmark.fill" catalog="system" systemItem="favorites" id="giU-TI-N1p"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="p7m-uw-cSG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xp5-By-3AS" kind="relationship" relationship="rootViewController" id="9cK-pu-p3W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bw0-6b-a1F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837.68115942028987" y="-251.11607142857142"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Ux5-om-eHT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQQ-9W-Ve4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="slider.horizontal.3" catalog="system" selectedImage="slider.horizontal.3" id="hlN-Tf-0Jj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gtp-Wa-2K2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WLd-g5-T21" kind="relationship" relationship="rootViewController" id="U2r-pw-xKX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfc-Sa-45s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837.68115942028987" y="543.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -16,10 +16,70 @@ extension CGAffineTransform {
     }
 }
 
+public extension NSObject {
+    
+    var className: String {
+        return String(describing: type(of: self)).components(separatedBy: ".").last!
+    }
+    
+    class var className: String {
+        return String(describing: self).components(separatedBy: ".").last!
+    }
+}
+
+
+extension UITableView {
+    
+    func register<T: UITableViewHeaderFooterView>(headerFooterView classType: T.Type) {
+        register(UINib(nibName: T.className, bundle: nil), forHeaderFooterViewReuseIdentifier: T.className)
+    }
+    
+    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(for section: Int = 0) -> T? {
+        let view = dequeueReusableHeaderFooterView(withIdentifier: T.className) as? T
+        view?.tag = section
+        return view
+    }
+    
+    func register<T: UITableViewHeaderFooterView>(headerFooterViewClass classType: T.Type) {
+        register(classType, forHeaderFooterViewReuseIdentifier: T.className)
+    }
+    
+    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>() -> T? {
+        return dequeueReusableHeaderFooterView(withIdentifier: T.className) as? T
+    }
+    
+    func register<T: UITableViewCell>(cell classType: T.Type) {
+        register(UINib(nibName: T.className, bundle: nil), forCellReuseIdentifier: T.className)
+    }
+    
+    func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
+    }
+    
+    func dequeueReusableCell<T: UITableViewCell>() -> T {
+        return dequeueReusableCell(withIdentifier: T.className) as! T
+    }
+}
+
+
+class TableView: UITableView {
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+                
+        if let hitView = super.hitTest(point, with: event) , hitView != self
+        {
+            return hitView
+        }
+        return nil
+    }
+}
 
 
 extension UIView {
 
+    static func loadFromNib<T: UIView>() -> T {
+        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+    }
     
     func dropShadowBottom(color: UIColor) {
         self.shadowColor = color

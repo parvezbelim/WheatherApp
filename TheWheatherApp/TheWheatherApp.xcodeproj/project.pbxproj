@@ -22,9 +22,13 @@
 		E995EE372672A2B0008FAEE4 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995EE2F2672A2AF008FAEE4 /* NotificationView.swift */; };
 		E995EE382672A2B0008FAEE4 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E995EE302672A2AF008FAEE4 /* NotificationView.xib */; };
 		E995EE392672A2B0008FAEE4 /* PanDirectionGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995EE322672A2B0008FAEE4 /* PanDirectionGestureRecognizer.swift */; };
-		E995EE3A2672A2B0008FAEE4 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995EE342672A2B0008FAEE4 /* CommonExtensions.swift */; };
-		E995EE3B2672A2B0008FAEE4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995EE352672A2B0008FAEE4 /* UIViewController.swift */; };
-		E995EE3C2672A2B0008FAEE4 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995EE362672A2B0008FAEE4 /* UIStoryboard.swift */; };
+		E9C52DD5269EADC40034B1A3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DD4269EADC40034B1A3 /* HomeVC.swift */; };
+		E9C52DDC269EB1A30034B1A3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DDB269EB1A30034B1A3 /* SettingsVC.swift */; };
+		E9C52DE0269EB73D0034B1A3 /* CellCityWheather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DDE269EB73D0034B1A3 /* CellCityWheather.swift */; };
+		E9C52DE1269EB73D0034B1A3 /* CellCityWheather.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C52DDF269EB73D0034B1A3 /* CellCityWheather.xib */; };
+		E9C52DE6269EC0630034B1A3 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DE3269EC0630034B1A3 /* CommonExtensions.swift */; };
+		E9C52DE7269EC0630034B1A3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DE4269EC0630034B1A3 /* UIViewController.swift */; };
+		E9C52DE8269EC0630034B1A3 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DE5269EC0630034B1A3 /* UIStoryboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +69,13 @@
 		E995EE2F2672A2AF008FAEE4 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		E995EE302672A2AF008FAEE4 /* NotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		E995EE322672A2B0008FAEE4 /* PanDirectionGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanDirectionGestureRecognizer.swift; sourceTree = "<group>"; };
-		E995EE342672A2B0008FAEE4 /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
-		E995EE352672A2B0008FAEE4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		E995EE362672A2B0008FAEE4 /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		E9C52DD4269EADC40034B1A3 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E9C52DDB269EB1A30034B1A3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		E9C52DDE269EB73D0034B1A3 /* CellCityWheather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCityWheather.swift; sourceTree = "<group>"; };
+		E9C52DDF269EB73D0034B1A3 /* CellCityWheather.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellCityWheather.xib; sourceTree = "<group>"; };
+		E9C52DE3269EC0630034B1A3 /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
+		E9C52DE4269EC0630034B1A3 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E9C52DE5269EC0630034B1A3 /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +127,11 @@
 		E995EDC1267297D3008FAEE4 /* TheWheatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				E9C52DE9269EC0A10034B1A3 /* Network */,
 				E995EE0226729A68008FAEE4 /* AppGlobal */,
 				E995EE0126729A68008FAEE4 /* AppScene */,
 				E995EDFF26729A68008FAEE4 /* Model */,
+				E9C52DE2269EC0630034B1A3 /* Extensions */,
 				E995EE0026729A68008FAEE4 /* Resources */,
 				E995EDFE26729A68008FAEE4 /* View */,
 				E995EDCE267297D6008FAEE4 /* Assets.xcassets */,
@@ -168,7 +178,6 @@
 		E995EE0026729A68008FAEE4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E995EE332672A2B0008FAEE4 /* Extensions */,
 				E995EE2E2672A2AF008FAEE4 /* NotificationView */,
 				E995EE312672A2B0008FAEE4 /* Utility */,
 			);
@@ -178,6 +187,8 @@
 		E995EE0126729A68008FAEE4 /* AppScene */ = {
 			isa = PBXGroup;
 			children = (
+				E9C52DD6269EB1630034B1A3 /* Settings */,
+				E9C52DD0269EAD790034B1A3 /* Home */,
 			);
 			path = AppScene;
 			sourceTree = "<group>";
@@ -219,14 +230,95 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		E995EE332672A2B0008FAEE4 /* Extensions */ = {
+		E9C52DD0269EAD790034B1A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E995EE342672A2B0008FAEE4 /* CommonExtensions.swift */,
-				E995EE352672A2B0008FAEE4 /* UIViewController.swift */,
-				E995EE362672A2B0008FAEE4 /* UIStoryboard.swift */,
+				E9C52DDD269EB68B0034B1A3 /* Cells */,
+				E9C52DD3269EAD930034B1A3 /* HomeContracts */,
+				E9C52DD2269EAD8A0034B1A3 /* VM */,
+				E9C52DD1269EAD820034B1A3 /* VC */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E9C52DD1269EAD820034B1A3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DD4269EADC40034B1A3 /* HomeVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		E9C52DD2269EAD8A0034B1A3 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		E9C52DD3269EAD930034B1A3 /* HomeContracts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeContracts;
+			sourceTree = "<group>";
+		};
+		E9C52DD6269EB1630034B1A3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DD9269EB1770034B1A3 /* SettingsContracts */,
+				E9C52DD8269EB1720034B1A3 /* VM */,
+				E9C52DD7269EB16C0034B1A3 /* VC */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E9C52DD7269EB16C0034B1A3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DDB269EB1A30034B1A3 /* SettingsVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		E9C52DD8269EB1720034B1A3 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		E9C52DD9269EB1770034B1A3 /* SettingsContracts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingsContracts;
+			sourceTree = "<group>";
+		};
+		E9C52DDD269EB68B0034B1A3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DDE269EB73D0034B1A3 /* CellCityWheather.swift */,
+				E9C52DDF269EB73D0034B1A3 /* CellCityWheather.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E9C52DE2269EC0630034B1A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DE3269EC0630034B1A3 /* CommonExtensions.swift */,
+				E9C52DE4269EC0630034B1A3 /* UIViewController.swift */,
+				E9C52DE5269EC0630034B1A3 /* UIStoryboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9C52DE9269EC0A10034B1A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +433,7 @@
 				E995EE1026729AF1008FAEE4 /* Main.storyboard in Resources */,
 				E995EDCF267297D6008FAEE4 /* Assets.xcassets in Resources */,
 				E995EE0F26729AF1008FAEE4 /* LaunchScreen.storyboard in Resources */,
+				E9C52DE1269EB73D0034B1A3 /* CellCityWheather.xib in Resources */,
 				E995EE382672A2B0008FAEE4 /* NotificationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,16 +459,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E995EE3C2672A2B0008FAEE4 /* UIStoryboard.swift in Sources */,
+				E9C52DDC269EB1A30034B1A3 /* SettingsVC.swift in Sources */,
 				E995EE0526729A68008FAEE4 /* AppDelegate.swift in Sources */,
 				E995EDCD267297D3008FAEE4 /* TheWheatherApp.xcdatamodeld in Sources */,
+				E9C52DE0269EB73D0034B1A3 /* CellCityWheather.swift in Sources */,
 				E995EE372672A2B0008FAEE4 /* NotificationView.swift in Sources */,
 				E995EE2A2672A21C008FAEE4 /* GlobalFunctions.swift in Sources */,
-				E995EE3B2672A2B0008FAEE4 /* UIViewController.swift in Sources */,
+				E9C52DE8269EC0630034B1A3 /* UIStoryboard.swift in Sources */,
 				E995EE292672A21C008FAEE4 /* MyTaxiServices.swift in Sources */,
+				E9C52DE7269EC0630034B1A3 /* UIViewController.swift in Sources */,
 				E995EE392672A2B0008FAEE4 /* PanDirectionGestureRecognizer.swift in Sources */,
 				E995EE0626729A68008FAEE4 /* SceneDelegate.swift in Sources */,
-				E995EE3A2672A2B0008FAEE4 /* CommonExtensions.swift in Sources */,
+				E9C52DD5269EADC40034B1A3 /* HomeVC.swift in Sources */,
+				E9C52DE6269EC0630034B1A3 /* CommonExtensions.swift in Sources */,
 				E995EE282672A21C008FAEE4 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
