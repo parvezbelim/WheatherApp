@@ -29,6 +29,12 @@
 		E9C52DE6269EC0630034B1A3 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DE3269EC0630034B1A3 /* CommonExtensions.swift */; };
 		E9C52DE7269EC0630034B1A3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DE4269EC0630034B1A3 /* UIViewController.swift */; };
 		E9C52DE8269EC0630034B1A3 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DE5269EC0630034B1A3 /* UIStoryboard.swift */; };
+		E9C52DEB26A093720034B1A3 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DEA26A093720034B1A3 /* HomeVM.swift */; };
+		E9C52DED26A0938E0034B1A3 /* HomeVmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DEC26A0938E0034B1A3 /* HomeVmProtocol.swift */; };
+		E9C52DEF26A0973B0034B1A3 /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DEE26A0973B0034B1A3 /* HomeContracts.swift */; };
+		E9C52DF526A09C2C0034B1A3 /* Cities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DF326A09C2C0034B1A3 /* Cities+CoreDataClass.swift */; };
+		E9C52DF626A09C2C0034B1A3 /* Cities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DF426A09C2C0034B1A3 /* Cities+CoreDataProperties.swift */; };
+		E9C52DFD26A0B0580034B1A3 /* UserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52DFC26A0B0580034B1A3 /* UserLocationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,12 @@
 		E9C52DE3269EC0630034B1A3 /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
 		E9C52DE4269EC0630034B1A3 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E9C52DE5269EC0630034B1A3 /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		E9C52DEA26A093720034B1A3 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		E9C52DEC26A0938E0034B1A3 /* HomeVmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVmProtocol.swift; sourceTree = "<group>"; };
+		E9C52DEE26A0973B0034B1A3 /* HomeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContracts.swift; sourceTree = "<group>"; };
+		E9C52DF326A09C2C0034B1A3 /* Cities+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cities+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E9C52DF426A09C2C0034B1A3 /* Cities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cities+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E9C52DFC26A0B0580034B1A3 /* UserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +139,7 @@
 		E995EDC1267297D3008FAEE4 /* TheWheatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				E9C52DF026A09B690034B1A3 /* Database */,
 				E9C52DE9269EC0A10034B1A3 /* Network */,
 				E995EE0226729A68008FAEE4 /* AppGlobal */,
 				E995EE0126729A68008FAEE4 /* AppScene */,
@@ -136,7 +149,6 @@
 				E995EDFE26729A68008FAEE4 /* View */,
 				E995EDCE267297D6008FAEE4 /* Assets.xcassets */,
 				E995EDD3267297D6008FAEE4 /* Info.plist */,
-				E995EDCB267297D3008FAEE4 /* TheWheatherApp.xcdatamodeld */,
 			);
 			path = TheWheatherApp;
 			sourceTree = "<group>";
@@ -187,6 +199,7 @@
 		E995EE0126729A68008FAEE4 /* AppScene */ = {
 			isa = PBXGroup;
 			children = (
+				E9C52DF726A0AFDA0034B1A3 /* LocationFetcher */,
 				E9C52DD6269EB1630034B1A3 /* Settings */,
 				E9C52DD0269EAD790034B1A3 /* Home */,
 			);
@@ -252,6 +265,7 @@
 		E9C52DD2269EAD8A0034B1A3 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				E9C52DEA26A093720034B1A3 /* HomeVM.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -259,6 +273,8 @@
 		E9C52DD3269EAD930034B1A3 /* HomeContracts */ = {
 			isa = PBXGroup;
 			children = (
+				E9C52DEC26A0938E0034B1A3 /* HomeVmProtocol.swift */,
+				E9C52DEE26A0973B0034B1A3 /* HomeContracts.swift */,
 			);
 			path = HomeContracts;
 			sourceTree = "<group>";
@@ -319,6 +335,48 @@
 			children = (
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E9C52DF026A09B690034B1A3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DF226A09B7D0034B1A3 /* DB */,
+				E9C52DF126A09B750034B1A3 /* Entities */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		E9C52DF126A09B750034B1A3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DF326A09C2C0034B1A3 /* Cities+CoreDataClass.swift */,
+				E9C52DF426A09C2C0034B1A3 /* Cities+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E9C52DF226A09B7D0034B1A3 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				E995EDCB267297D3008FAEE4 /* TheWheatherApp.xcdatamodeld */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		E9C52DF726A0AFDA0034B1A3 /* LocationFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DF826A0AFEB0034B1A3 /* VC */,
+			);
+			path = LocationFetcher;
+			sourceTree = "<group>";
+		};
+		E9C52DF826A0AFEB0034B1A3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E9C52DFC26A0B0580034B1A3 /* UserLocationVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,14 +523,20 @@
 				E9C52DE0269EB73D0034B1A3 /* CellCityWheather.swift in Sources */,
 				E995EE372672A2B0008FAEE4 /* NotificationView.swift in Sources */,
 				E995EE2A2672A21C008FAEE4 /* GlobalFunctions.swift in Sources */,
+				E9C52DEB26A093720034B1A3 /* HomeVM.swift in Sources */,
 				E9C52DE8269EC0630034B1A3 /* UIStoryboard.swift in Sources */,
+				E9C52DF626A09C2C0034B1A3 /* Cities+CoreDataProperties.swift in Sources */,
 				E995EE292672A21C008FAEE4 /* MyTaxiServices.swift in Sources */,
 				E9C52DE7269EC0630034B1A3 /* UIViewController.swift in Sources */,
+				E9C52DF526A09C2C0034B1A3 /* Cities+CoreDataClass.swift in Sources */,
+				E9C52DFD26A0B0580034B1A3 /* UserLocationVC.swift in Sources */,
 				E995EE392672A2B0008FAEE4 /* PanDirectionGestureRecognizer.swift in Sources */,
 				E995EE0626729A68008FAEE4 /* SceneDelegate.swift in Sources */,
 				E9C52DD5269EADC40034B1A3 /* HomeVC.swift in Sources */,
+				E9C52DED26A0938E0034B1A3 /* HomeVmProtocol.swift in Sources */,
 				E9C52DE6269EC0630034B1A3 /* CommonExtensions.swift in Sources */,
 				E995EE282672A21C008FAEE4 /* AppConstants.swift in Sources */,
+				E9C52DEF26A0973B0034B1A3 /* HomeContracts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

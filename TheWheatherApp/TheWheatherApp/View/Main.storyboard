@@ -40,10 +40,45 @@
                                     <outlet property="delegate" destination="xp5-By-3AS" id="wr4-Jo-Yc5"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyv-5Q-iet">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8DW-A3-pis">
+                                        <rect key="frame" x="50" y="273" width="314" height="127.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Cities added to check the wheather! Go ahead and add your cities to start checking the wheather" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSP-ji-LEQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="93.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-ib-xq4">
+                                                <rect key="frame" x="0.0" y="93.5" width="314" height="34"/>
+                                                <state key="normal" title="Add City">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="aV3-tG-yHX" kind="show" id="gkn-Ws-0Kl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="8DW-A3-pis" firstAttribute="centerY" secondItem="Zyv-5Q-iet" secondAttribute="centerY" id="7mZ-P1-gKz"/>
+                                    <constraint firstAttribute="trailing" secondItem="8DW-A3-pis" secondAttribute="trailing" constant="50" id="DiU-lJ-kvs"/>
+                                    <constraint firstItem="8DW-A3-pis" firstAttribute="leading" secondItem="Zyv-5Q-iet" secondAttribute="leading" constant="50" id="Wq7-XW-9Ob"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="er0-pw-NED"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Zyv-5Q-iet" firstAttribute="top" secondItem="er0-pw-NED" secondAttribute="top" id="6t8-qI-Trr"/>
+                            <constraint firstItem="er0-pw-NED" firstAttribute="bottom" secondItem="Zyv-5Q-iet" secondAttribute="bottom" id="9ad-LP-z8L"/>
+                            <constraint firstItem="er0-pw-NED" firstAttribute="trailing" secondItem="Zyv-5Q-iet" secondAttribute="trailing" id="GZN-l3-gG0"/>
+                            <constraint firstItem="Zyv-5Q-iet" firstAttribute="leading" secondItem="er0-pw-NED" secondAttribute="leading" id="LnU-eU-waT"/>
                             <constraint firstItem="VKf-9C-5BW" firstAttribute="top" secondItem="er0-pw-NED" secondAttribute="top" id="Ogp-2m-EdO"/>
                             <constraint firstItem="er0-pw-NED" firstAttribute="trailing" secondItem="VKf-9C-5BW" secondAttribute="trailing" id="Tb2-HP-bYA"/>
                             <constraint firstItem="er0-pw-NED" firstAttribute="bottom" secondItem="VKf-9C-5BW" secondAttribute="bottom" id="fdI-NZ-fvc"/>
@@ -58,6 +93,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1O-8v-jyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1747.826086956522" y="-251.11607142857142"/>
+        </scene>
+        <!--User LocationVC-->
+        <scene sceneID="QMN-bT-aFm">
+            <objects>
+                <viewController storyboardIdentifier="UserLocationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aV3-tG-yHX" customClass="UserLocationVC" customModule="TheWheatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sQD-Lz-8X1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYy-DD-2wP">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-S4-d8d">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="aV3-tG-yHX" id="56t-h3-s3u"/>
+                                        </connections>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="bfJ-S4-d8d" firstAttribute="top" secondItem="aYy-DD-2wP" secondAttribute="top" id="EaL-yw-T1R"/>
+                                    <constraint firstItem="bfJ-S4-d8d" firstAttribute="leading" secondItem="aYy-DD-2wP" secondAttribute="leading" id="Kce-2l-Ll0"/>
+                                    <constraint firstAttribute="bottom" secondItem="bfJ-S4-d8d" secondAttribute="bottom" id="PIy-yd-yVj"/>
+                                    <constraint firstAttribute="trailing" secondItem="bfJ-S4-d8d" secondAttribute="trailing" id="Uo2-Fe-ce2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2sz-SS-7zP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aYy-DD-2wP" firstAttribute="leading" secondItem="2sz-SS-7zP" secondAttribute="leading" id="ILM-n3-NHO"/>
+                            <constraint firstItem="2sz-SS-7zP" firstAttribute="bottom" secondItem="aYy-DD-2wP" secondAttribute="bottom" id="Msr-qw-0ys"/>
+                            <constraint firstItem="2sz-SS-7zP" firstAttribute="trailing" secondItem="aYy-DD-2wP" secondAttribute="trailing" id="jY8-Sx-TcH"/>
+                            <constraint firstItem="aYy-DD-2wP" firstAttribute="top" secondItem="2sz-SS-7zP" secondAttribute="top" id="nah-9n-oRL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hXA-1O-yHF"/>
+                    <connections>
+                        <outlet property="mapView" destination="bfJ-S4-d8d" id="Knq-V6-Evr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpv-Zb-uUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2619" y="-632"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OXa-gC-Qk7">
