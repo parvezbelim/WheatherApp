@@ -32,8 +32,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-9C-5BW">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-9C-5BW">
+                                <rect key="frame" x="0.0" y="140" width="414" height="624"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xp5-By-3AS" id="IjF-ge-qKa"/>
@@ -41,10 +41,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyv-5Q-iet">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="624"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8DW-A3-pis">
-                                        <rect key="frame" x="50" y="273" width="314" height="127.5"/>
+                                        <rect key="frame" x="50" y="248.5" width="314" height="127.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Cities added to check the wheather! Go ahead and add your cities to start checking the wheather" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSP-ji-LEQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="93.5"/>
@@ -85,7 +85,20 @@
                             <constraint firstItem="VKf-9C-5BW" firstAttribute="leading" secondItem="er0-pw-NED" secondAttribute="leading" id="que-JC-g0Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="The Wheather App" largeTitleDisplayMode="always" id="45j-is-Hvi"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="The Wheather App" largeTitleDisplayMode="always" id="45j-is-Hvi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="A5J-e6-dzg">
+                            <connections>
+                                <action selector="actionEdit:" destination="xp5-By-3AS" id="Y3L-Ry-eVE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oZu-Fn-gbv">
+                            <connections>
+                                <action selector="actionAdd:" destination="xp5-By-3AS" id="Buj-X5-ztw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tblCities" destination="VKf-9C-5BW" id="edt-MH-jcp"/>
                         <outlet property="viewPlaceholder" destination="Zyv-5Q-iet" id="eiT-g2-55h"/>
@@ -94,6 +107,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1O-8v-jyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1747.826086956522" y="-251.11607142857142"/>
+        </scene>
+        <!--City Weather DetailVC-->
+        <scene sceneID="QXZ-9M-X5t">
+            <objects>
+                <viewController storyboardIdentifier="CityWeatherDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vlw-5d-1Oe" customClass="CityWeatherDetailVC" customModule="TheWheatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TFj-9r-aGM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpY-Kh-EU4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="36U-iv-cm5">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="36U-iv-cm5" firstAttribute="top" secondItem="PpY-Kh-EU4" secondAttribute="top" id="7PF-GO-DjL"/>
+                                    <constraint firstItem="36U-iv-cm5" firstAttribute="leading" secondItem="PpY-Kh-EU4" secondAttribute="leading" id="B0t-IF-HUK"/>
+                                    <constraint firstAttribute="trailing" secondItem="36U-iv-cm5" secondAttribute="trailing" id="Bgc-v2-fVm"/>
+                                    <constraint firstAttribute="bottom" secondItem="36U-iv-cm5" secondAttribute="bottom" id="gMO-91-fdh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eht-U8-Hgf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eht-U8-Hgf" firstAttribute="bottom" secondItem="PpY-Kh-EU4" secondAttribute="bottom" id="AE9-6W-TXk"/>
+                            <constraint firstItem="PpY-Kh-EU4" firstAttribute="top" secondItem="eht-U8-Hgf" secondAttribute="top" id="JOz-Gr-p8r"/>
+                            <constraint firstItem="eht-U8-Hgf" firstAttribute="trailing" secondItem="PpY-Kh-EU4" secondAttribute="trailing" id="qE1-Ca-Scc"/>
+                            <constraint firstItem="PpY-Kh-EU4" firstAttribute="leading" secondItem="eht-U8-Hgf" secondAttribute="leading" id="uwl-hX-VGR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mC1-lX-v1t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605" y="69"/>
         </scene>
         <!--User LocationVC-->
         <scene sceneID="QMN-bT-aFm">

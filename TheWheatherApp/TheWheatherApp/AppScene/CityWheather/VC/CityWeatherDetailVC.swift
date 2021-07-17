@@ -1,24 +1,20 @@
 //
-//  HomeVCRootTab.swift
+//  CityWeatherDetailVC.swift
 //  TheWheatherApp
 //
-//  Created by Parvez Belim on 17/7/21.
+//  Created by Parvez Belim on 18/7/21.
 //
 
 import UIKit
 
-class HomeVCRootTab: UITabBarController {
-    
+class CityWeatherDetailVC: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeVcDependencyInjection()
+
+        // Do any additional setup after loading the view.
     }
     
-    private func homeVcDependencyInjection(){
-        if let objHome = (self.viewControllers?.first as? UINavigationController)?.viewControllers.first as? HomeVC{
-            objHome.vm = HomeVM(CityRecodsDBOperations())
-        }
-    }
 
     /*
     // MARK: - Navigation

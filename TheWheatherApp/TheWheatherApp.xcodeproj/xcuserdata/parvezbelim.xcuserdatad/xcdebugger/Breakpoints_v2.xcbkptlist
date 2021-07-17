@@ -30,8 +30,8 @@
             filePath = "TheWheatherApp/AppScene/Home/VC/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "userLocListLoaded()"
             landmarkType = "7">
          </BreakpointContent>

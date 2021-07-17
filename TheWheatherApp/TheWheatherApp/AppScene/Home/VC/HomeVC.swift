@@ -21,11 +21,19 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerXibs()
+        setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         vm.getCities()
     }
     
     // MARK: - Setup
+    private func setup(){
+        tblCities.allowsMultipleSelectionDuringEditing = true
+        registerXibs()
+    }
+    
     private func registerXibs(){
         tblCities.register(cell: CellCityWheather.self)
     }
@@ -35,6 +43,15 @@ class HomeVC: UIViewController {
     @IBAction func actionShowUserLocation(_ sender: UIButton){
         self.navigationController?.pushViewController(UserLocRouter.make(), animated: true)
     }
+    
+    @IBAction func actionEdit(_ sender: UIButton){
+        tblCities.isEditing = true
+    }
+    
+    @IBAction func actionAdd(_ sender: UIButton){
+        self.navigationController?.pushViewController(UserLocRouter.make(), animated: true)
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -62,6 +79,34 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellCityWheather") as! CellCityWheather
+        cell.configureCell(vm.arrLocs[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+      let delete = deleteProperty(at: indexPath)
+      return UISwipeActionsConfiguration(actions: [delete])
+    }
+
+    // Declare this method in UIViewController Main and modify according to your need
+
+    func deleteProperty(at indexpath: IndexPath) -> UIContextualAction {
+      let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completon) in
+//        self.yourArray.remove(at: indexpath) // Removing from array at selected index
+
+        completon(true)
+        action.backgroundColor = .red //cell background color
+      }
+      return action
     }
 }
