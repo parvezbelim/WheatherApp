@@ -2,7 +2,7 @@
 //  Cities+CoreDataProperties.swift
 //  TheWheatherApp
 //
-//  Created by Parvez Belim on 15/7/21.
+//  Created by Parvez Belim on 16/7/21.
 //
 //
 
@@ -17,7 +17,9 @@ extension Cities {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var id: Int16
+    @NSManaged public var lat: Double
+    @NSManaged public var lon: Double
+    @NSManaged public var country: String?
 
 }
 

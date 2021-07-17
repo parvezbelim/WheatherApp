@@ -9,11 +9,38 @@ import UIKit
 import MapKit
 
 class UserLocationVC: UIViewController {
-    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var mapView: CustomMap!
+    @IBOutlet weak var lblLocation: UILabel!
+    
     private var isInitialLoad = true
+    private let locationManager = CLLocationManager()
+    private var locPin:LocationAnnotation!
+    private var pinAnnotationView:MKPinAnnotationView!
+    
+    var vm: UserLocVMProtocol!{
+        didSet{
+            vm.delegate = self
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUserCurrenLocation()
+    }
+    
+    private func setupUserCurrenLocation(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = false
+    }
+
+    
+    @IBAction func actionConfirmCity(_ sender: Any) {
+        vm.saveUserCurrLocation()
+        self.navigationController?.popViewController(animated: true)
     }
     
 
@@ -29,37 +56,22 @@ class UserLocationVC: UIViewController {
 
 }
 
-//MARK: - Taxi List Delegate -
-extension UserLocationVC: MKMapViewDelegate, CLLocationManagerDelegate{
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        if let userLocation = annotation as? MKUserLocation{
-            userLocation.title = "My Location"
-            return nil
-        }
-        let reuseIdentifier = "pin"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-            annotationView?.canShowCallout = true
-        } else {
-            annotationView?.annotation = annotation
-        }
-
-//        annotationView?.image = UIImage(named: "taxiMapIcon")
-
-        return annotationView
+extension UserLocationVC: UserLocOutputDelegate{
+    func responseReceived(locDetail: UserCurrLocVMModel) {
+        lblLocation.text = locDetail.cityName
     }
-    
-    //@@@@@@@ Toggle live and static envirnment @@@@@@@@@@
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+}
 
+extension UserLocationVC: MKMapViewDelegate, CLLocationManagerDelegate{
+
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let coordinate = mapView.convert(mapView.center, toCoordinateFrom: mapView)
+        vm.getWheatherForUserLoc(lat: coordinate.latitude, long: coordinate.longitude)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let userLoction: CLLocation = locations.first,isInitialLoad{
-            print(userLoction)
+            mapView.setupMapRegionFor(location: userLoction)
             isInitialLoad = false
         }
     }

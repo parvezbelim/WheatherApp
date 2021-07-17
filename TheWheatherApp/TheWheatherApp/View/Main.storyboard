@@ -58,7 +58,7 @@
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="aV3-tG-yHX" kind="show" id="gkn-Ws-0Kl"/>
+                                                    <action selector="actionShowUserLocation:" destination="xp5-By-3AS" eventType="touchUpInside" id="rDH-if-tLS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -88,6 +88,7 @@
                     <navigationItem key="navigationItem" title="The Wheather App" largeTitleDisplayMode="always" id="45j-is-Hvi"/>
                     <connections>
                         <outlet property="tblCities" destination="VKf-9C-5BW" id="edt-MH-jcp"/>
+                        <outlet property="viewPlaceholder" destination="Zyv-5Q-iet" id="eiT-g2-55h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1O-8v-jyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -103,21 +104,100 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYy-DD-2wP">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-S4-d8d">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-S4-d8d" customClass="CustomMap" customModule="TheWheatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <connections>
                                             <outlet property="delegate" destination="aV3-tG-yHX" id="56t-h3-s3u"/>
                                         </connections>
                                     </mapView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBv-WG-ARZ">
+                                        <rect key="frame" x="187" y="389" width="40" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vTz-3S-48o">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vTz-3S-48o" firstAttribute="top" secondItem="uBv-WG-ARZ" secondAttribute="top" id="4pR-tH-ZRM"/>
+                                            <constraint firstItem="vTz-3S-48o" firstAttribute="leading" secondItem="uBv-WG-ARZ" secondAttribute="leading" id="774-s6-Z3G"/>
+                                            <constraint firstAttribute="trailing" secondItem="vTz-3S-48o" secondAttribute="trailing" id="I9C-oc-GrA"/>
+                                            <constraint firstAttribute="height" constant="40" id="LHg-Et-pJ6"/>
+                                            <constraint firstAttribute="bottom" secondItem="vTz-3S-48o" secondAttribute="bottom" id="X9N-d9-Z4q"/>
+                                            <constraint firstAttribute="width" constant="40" id="wp6-He-fAs"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HN-06-r7x">
+                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oza-at-tEp">
+                                                <rect key="frame" x="16" y="10" width="382" height="40"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="CONFIRM">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionConfirmCity:" destination="aV3-tG-yHX" eventType="touchUpInside" id="LMy-0a-Gar"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="N8X-rZ-Wmt"/>
+                                            <constraint firstAttribute="bottom" secondItem="oza-at-tEp" secondAttribute="bottom" constant="10" id="WXO-Tp-DWa"/>
+                                            <constraint firstItem="oza-at-tEp" firstAttribute="top" secondItem="5HN-06-r7x" secondAttribute="top" constant="10" id="ZaP-BI-lYp"/>
+                                            <constraint firstAttribute="trailing" secondItem="oza-at-tEp" secondAttribute="trailing" constant="16" id="Zg6-3a-CTq"/>
+                                            <constraint firstItem="oza-at-tEp" firstAttribute="leading" secondItem="5HN-06-r7x" secondAttribute="leading" constant="16" id="qO7-6t-mg9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rYk-RT-qtI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIo-pT-aH8">
+                                                <rect key="frame" x="16" y="10" width="382" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="2pL-Es-dqx"/>
+                                            <constraint firstAttribute="bottom" secondItem="bIo-pT-aH8" secondAttribute="bottom" constant="10" id="3CY-WZ-HvV"/>
+                                            <constraint firstAttribute="trailing" secondItem="bIo-pT-aH8" secondAttribute="trailing" constant="16" id="O5g-Um-l8r"/>
+                                            <constraint firstItem="bIo-pT-aH8" firstAttribute="leading" secondItem="rYk-RT-qtI" secondAttribute="leading" constant="16" id="ryL-2d-EuJ"/>
+                                            <constraint firstItem="bIo-pT-aH8" firstAttribute="top" secondItem="rYk-RT-qtI" secondAttribute="top" constant="10" id="sdw-jI-mt5"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rYk-RT-qtI" secondAttribute="trailing" id="2h1-6s-hJC"/>
                                     <constraint firstItem="bfJ-S4-d8d" firstAttribute="top" secondItem="aYy-DD-2wP" secondAttribute="top" id="EaL-yw-T1R"/>
                                     <constraint firstItem="bfJ-S4-d8d" firstAttribute="leading" secondItem="aYy-DD-2wP" secondAttribute="leading" id="Kce-2l-Ll0"/>
+                                    <constraint firstItem="uBv-WG-ARZ" firstAttribute="centerX" secondItem="aYy-DD-2wP" secondAttribute="centerX" id="KdR-Lt-Oob"/>
                                     <constraint firstAttribute="bottom" secondItem="bfJ-S4-d8d" secondAttribute="bottom" id="PIy-yd-yVj"/>
                                     <constraint firstAttribute="trailing" secondItem="bfJ-S4-d8d" secondAttribute="trailing" id="Uo2-Fe-ce2"/>
+                                    <constraint firstItem="5HN-06-r7x" firstAttribute="leading" secondItem="aYy-DD-2wP" secondAttribute="leading" id="Y98-o2-wFM"/>
+                                    <constraint firstItem="rYk-RT-qtI" firstAttribute="leading" secondItem="aYy-DD-2wP" secondAttribute="leading" id="anj-E3-Hb6"/>
+                                    <constraint firstAttribute="trailing" secondItem="5HN-06-r7x" secondAttribute="trailing" id="aot-4P-cQ0"/>
+                                    <constraint firstItem="uBv-WG-ARZ" firstAttribute="centerY" secondItem="aYy-DD-2wP" secondAttribute="centerY" id="av1-15-G3t"/>
+                                    <constraint firstItem="rYk-RT-qtI" firstAttribute="top" secondItem="aYy-DD-2wP" secondAttribute="top" id="iwN-HK-8MN"/>
+                                    <constraint firstAttribute="bottom" secondItem="5HN-06-r7x" secondAttribute="bottom" id="joW-7t-ZP5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -130,19 +210,20 @@
                             <constraint firstItem="aYy-DD-2wP" firstAttribute="top" secondItem="2sz-SS-7zP" secondAttribute="top" id="nah-9n-oRL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hXA-1O-yHF"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="hXA-1O-yHF"/>
                     <connections>
-                        <outlet property="mapView" destination="bfJ-S4-d8d" id="Knq-V6-Evr"/>
+                        <outlet property="lblLocation" destination="bIo-pT-aH8" id="VLG-TX-C5P"/>
+                        <outlet property="mapView" destination="bfJ-S4-d8d" id="baN-2J-Nq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpv-Zb-uUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2619" y="-632"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--HomeVC Root Tab-->
         <scene sceneID="OXa-gC-Qk7">
             <objects>
-                <tabBarController id="3oJ-1q-t0v" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="WheatherAppRootTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3oJ-1q-t0v" customClass="HomeVCRootTab" customModule="TheWheatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6eN-QH-dob">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -199,6 +280,7 @@
     </scenes>
     <resources>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+        <image name="pinIcon" width="23" height="23"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

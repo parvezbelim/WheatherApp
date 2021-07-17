@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HomeVmOutputDelegate: Any{
-    func responseReceived()
+    func userLocListLoaded()
 }

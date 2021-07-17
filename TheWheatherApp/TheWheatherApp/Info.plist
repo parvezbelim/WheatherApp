@@ -62,5 +62,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>App would like to access your current location to get your city to populate wheather</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App would like to access your current location to get your city to populate wheather</string>
 </dict>
 </plist>

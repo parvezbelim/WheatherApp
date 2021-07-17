@@ -2,7 +2,7 @@
 //  Cities+CoreDataClass.swift
 //  TheWheatherApp
 //
-//  Created by Parvez Belim on 15/7/21.
+//  Created by Parvez Belim on 16/7/21.
 //
 //
 

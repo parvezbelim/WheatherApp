@@ -9,13 +9,20 @@ import XCTest
 @testable import TheWheatherApp
 
 class TheWheatherAppTests: XCTestCase {
-
+    var objDBOperations: CityRecodsDBOperations!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        objDBOperations = CityRecodsDBOperations()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        objDBOperations = nil
+    }
+    
+    func testCityRecords() throws{
+        if let count = objDBOperations.getCityList()?.count{
+            XCTAssertGreaterThan(count, 0)
+        }
     }
 
     func testExample() throws {

@@ -1,12 +1,13 @@
 import Foundation
 import UIKit
 
-let APPNAME = "MyTaxi"
 
-let BASE_URL = "https://poi-api.mytaxi.com/"
+let BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+let APPNAME = "Wheather App"
+let KEY_WHEATHERAPI = "2f4904204d29852cb67e6342d43d8a90"
 
 //GLOBAL Shared File Object
-let AppdelegateObj:AppDelegate =  UIApplication.shared.delegate as! AppDelegate
+let AppdelegateObj =  UIApplication.shared.delegate as? AppDelegate
 
 //MESSAGEs
 let ALERTSERVERNOTRESPONDING = "Server not responding, Please try again"

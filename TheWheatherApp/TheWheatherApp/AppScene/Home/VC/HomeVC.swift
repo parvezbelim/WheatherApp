@@ -10,10 +10,19 @@ import UIKit
 class HomeVC: UIViewController {
 
     @IBOutlet weak var tblCities: UITableView!
+    @IBOutlet weak var viewPlaceholder: UIView!
+
+    
+    var vm: HomeVmProtocol!{
+        didSet{
+            vm.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       registerXibs()
+        registerXibs()
+        vm.getCities()
     }
     
     // MARK: - Setup
@@ -21,6 +30,11 @@ class HomeVC: UIViewController {
         tblCities.register(cell: CellCityWheather.self)
     }
     
+    
+    //MARK: - IBActions -
+    @IBAction func actionShowUserLocation(_ sender: UIButton){
+        self.navigationController?.pushViewController(UserLocRouter.make(), animated: true)
+    }
 
     /*
     // MARK: - Navigation
@@ -34,9 +48,16 @@ class HomeVC: UIViewController {
 
 }
 
+extension HomeVC: HomeVmOutputDelegate{
+    func userLocListLoaded() {
+        viewPlaceholder.isHidden = (vm.arrLocs.count > 0)
+        tblCities.reloadData()
+    }
+}
+
 extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return vm.arrLocs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

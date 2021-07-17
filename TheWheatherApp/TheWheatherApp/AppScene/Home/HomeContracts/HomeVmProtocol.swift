@@ -9,6 +9,8 @@ import Foundation
 
 protocol HomeVmProtocol: AnyObject {
     var delegate: HomeVmOutputDelegate? { get set}
+    var arrLocs: [UserCurrLocVMModel] {get set}
+    func getCities()
 }
 
 
