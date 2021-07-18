@@ -8,11 +8,19 @@
 import UIKit
 
 class CityWeatherDetailVC: UIViewController {
+    var vm: CityWeatherVMProtocol!{
+        didSet{
+            vm.delegate = self
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setup()
+    }
+    
+    private func setup(){
+        vm.getCityWeatherDetail()
     }
     
 
@@ -26,4 +34,10 @@ class CityWeatherDetailVC: UIViewController {
     }
     */
 
+}
+
+extension CityWeatherDetailVC: CityWeatherOutputDelegate{
+    func cityWheatherLoaded() {
+        
+    }
 }

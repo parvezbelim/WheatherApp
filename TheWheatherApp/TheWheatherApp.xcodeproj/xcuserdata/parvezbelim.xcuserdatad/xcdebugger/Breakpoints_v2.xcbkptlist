@@ -14,8 +14,8 @@
             filePath = "TheWheatherApp/AppScene/LocationFetcher/VM/UserLocationVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "saveUserCurrLocation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,16 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AED9FFF8-17DE-471B-8553-7C45FCFF8454"
+            uuid = "5D86C49A-A98E-4C28-ADF9-D5416E99F215"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TheWheatherApp/AppScene/Home/VC/HomeVC.swift"
+            filePath = "TheWheatherApp/AppScene/LocationFetcher/VM/UserLocationVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "userLocListLoaded()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getWheatherForUserLoc(lat:long:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F902BF5-9BF3-41E2-AB1E-FE8C5F5E2F58"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheWheatherApp/AppScene/CityWheather/VM/CityWeatherVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getCityWeatherDetail()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

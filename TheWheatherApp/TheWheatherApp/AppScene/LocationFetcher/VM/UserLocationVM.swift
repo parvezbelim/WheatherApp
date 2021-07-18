@@ -27,6 +27,7 @@ class UserLocationVM : UserLocVMProtocol{
             do {
                 let objJson = try JSONSerialization.jsonObject(with: response, options: [])
                 let data = try JSONSerialization.data(withJSONObject: objJson as Any, options: .prettyPrinted)
+                print(objJson)
                 let objResponse = try JSONDecoder().decode(CityCoordinates.self, from: data)
                 self.objCurrLoc = UserCurrLocVMModel(cityName: objResponse.name,
                                                 lat: objResponse.coord.lat,

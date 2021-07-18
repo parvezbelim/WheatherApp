@@ -49,6 +49,8 @@
 		E9C52E2526A36AEB0034B1A3 /* CityWeatherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52E2426A36AEB0034B1A3 /* CityWeatherDetailVC.swift */; };
 		E9C52E2726A36B500034B1A3 /* CityWeatherVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52E2626A36B500034B1A3 /* CityWeatherVM.swift */; };
 		E9C52E2926A36B670034B1A3 /* CityWeatherVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52E2826A36B670034B1A3 /* CityWeatherVMProtocol.swift */; };
+		E9FA2A8626A40A30003A9D00 /* CityWeatherContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA2A8526A40A30003A9D00 /* CityWeatherContracts.swift */; };
+		E9FA2A8826A41A97003A9D00 /* CityWeatherVCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA2A8726A41A97003A9D00 /* CityWeatherVCRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		E9C52E2426A36AEB0034B1A3 /* CityWeatherDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailVC.swift; sourceTree = "<group>"; };
 		E9C52E2626A36B500034B1A3 /* CityWeatherVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherVM.swift; sourceTree = "<group>"; };
 		E9C52E2826A36B670034B1A3 /* CityWeatherVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherVMProtocol.swift; sourceTree = "<group>"; };
+		E9FA2A8526A40A30003A9D00 /* CityWeatherContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherContracts.swift; sourceTree = "<group>"; };
+		E9FA2A8726A41A97003A9D00 /* CityWeatherVCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherVCRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +485,8 @@
 			isa = PBXGroup;
 			children = (
 				E9C52E2826A36B670034B1A3 /* CityWeatherVMProtocol.swift */,
+				E9FA2A8526A40A30003A9D00 /* CityWeatherContracts.swift */,
+				E9FA2A8726A41A97003A9D00 /* CityWeatherVCRouter.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -633,6 +639,7 @@
 				E9C52E1326A1B07C0034B1A3 /* CityCoordinate.swift in Sources */,
 				E9C52DE0269EB73D0034B1A3 /* CellCityWheather.swift in Sources */,
 				E9C52E2526A36AEB0034B1A3 /* CityWeatherDetailVC.swift in Sources */,
+				E9FA2A8826A41A97003A9D00 /* CityWeatherVCRouter.swift in Sources */,
 				E995EE372672A2B0008FAEE4 /* NotificationView.swift in Sources */,
 				E995EE2A2672A21C008FAEE4 /* GlobalFunctions.swift in Sources */,
 				E9C52E1726A1C81B0034B1A3 /* CityRecordsUseCase.swift in Sources */,
@@ -651,6 +658,7 @@
 				E995EE0626729A68008FAEE4 /* SceneDelegate.swift in Sources */,
 				E9C52DD5269EADC40034B1A3 /* HomeVC.swift in Sources */,
 				E9C52DED26A0938E0034B1A3 /* HomeVmProtocol.swift in Sources */,
+				E9FA2A8626A40A30003A9D00 /* CityWeatherContracts.swift in Sources */,
 				E9C52DE6269EC0630034B1A3 /* CommonExtensions.swift in Sources */,
 				E995EE282672A21C008FAEE4 /* AppConstants.swift in Sources */,
 				E9C52DEF26A0973B0034B1A3 /* HomeContracts.swift in Sources */,

@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 
-let BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+let BASE_URL = "https://api.openweathermap.org/data/2.5/"
 let APPNAME = "Wheather App"
 let KEY_WHEATHERAPI = "2f4904204d29852cb67e6342d43d8a90"
 

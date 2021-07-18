@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol CityWeatherVMProtocol: AnyObject {
+    
+    var delegate: CityWeatherOutputDelegate? { get set}
+    func getCityWeatherDetail()
+    
+}
+

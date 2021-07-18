@@ -83,6 +83,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let objCityWeatherDetail = CityWeatherVCRouter.make(vm.arrLocs[indexPath.row])
+        self.navigationController?.pushViewController(objCityWeatherDetail, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
     }
