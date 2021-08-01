@@ -51,6 +51,8 @@
 		E9C52E2926A36B670034B1A3 /* CityWeatherVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C52E2826A36B670034B1A3 /* CityWeatherVMProtocol.swift */; };
 		E9FA2A8626A40A30003A9D00 /* CityWeatherContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA2A8526A40A30003A9D00 /* CityWeatherContracts.swift */; };
 		E9FA2A8826A41A97003A9D00 /* CityWeatherVCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA2A8726A41A97003A9D00 /* CityWeatherVCRouter.swift */; };
+		E9FA2A8C26A58BCE003A9D00 /* CityForcastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA2A8B26A58BCE003A9D00 /* CityForcastList.swift */; };
+		E9FA2A8F26A5AA10003A9D00 /* CellCityWeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA2A8E26A5AA10003A9D00 /* CellCityWeatherForcast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		E9C52E2826A36B670034B1A3 /* CityWeatherVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherVMProtocol.swift; sourceTree = "<group>"; };
 		E9FA2A8526A40A30003A9D00 /* CityWeatherContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherContracts.swift; sourceTree = "<group>"; };
 		E9FA2A8726A41A97003A9D00 /* CityWeatherVCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherVCRouter.swift; sourceTree = "<group>"; };
+		E9FA2A8B26A58BCE003A9D00 /* CityForcastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityForcastList.swift; sourceTree = "<group>"; };
+		E9FA2A8E26A5AA10003A9D00 /* CellCityWeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCityWeatherForcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C52E1226A1B07C0034B1A3 /* CityCoordinate.swift */,
+				E9FA2A8B26A58BCE003A9D00 /* CityForcastList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 		E9C52E2026A368630034B1A3 /* CityWheather */ = {
 			isa = PBXGroup;
 			children = (
+				E9FA2A8D26A5A9C2003A9D00 /* Cells */,
 				E9C52E2326A368860034B1A3 /* Contracts */,
 				E9C52E2226A368790034B1A3 /* VM */,
 				E9C52E2126A368720034B1A3 /* VC */,
@@ -489,6 +495,14 @@
 				E9FA2A8726A41A97003A9D00 /* CityWeatherVCRouter.swift */,
 			);
 			path = Contracts;
+			sourceTree = "<group>";
+		};
+		E9FA2A8D26A5A9C2003A9D00 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E9FA2A8E26A5AA10003A9D00 /* CellCityWeatherForcast.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,6 +645,7 @@
 			files = (
 				E9C52DDC269EB1A30034B1A3 /* SettingsVC.swift in Sources */,
 				E995EE0526729A68008FAEE4 /* AppDelegate.swift in Sources */,
+				E9FA2A8F26A5AA10003A9D00 /* CellCityWeatherForcast.swift in Sources */,
 				E9C52E0C26A15ED60034B1A3 /* UserLocRouter.swift in Sources */,
 				E995EDCD267297D3008FAEE4 /* TheWheatherApp.xcdatamodeld in Sources */,
 				E9C52E1B26A1D34E0034B1A3 /* Cities+CoreDataProperties.swift in Sources */,
@@ -644,6 +659,7 @@
 				E995EE2A2672A21C008FAEE4 /* GlobalFunctions.swift in Sources */,
 				E9C52E1726A1C81B0034B1A3 /* CityRecordsUseCase.swift in Sources */,
 				E9C52E2726A36B500034B1A3 /* CityWeatherVM.swift in Sources */,
+				E9FA2A8C26A58BCE003A9D00 /* CityForcastList.swift in Sources */,
 				E9C52DEB26A093720034B1A3 /* HomeVM.swift in Sources */,
 				E9C52DE8269EC0630034B1A3 /* UIStoryboard.swift in Sources */,
 				E9C52E2926A36B670034B1A3 /* CityWeatherVMProtocol.swift in Sources */,

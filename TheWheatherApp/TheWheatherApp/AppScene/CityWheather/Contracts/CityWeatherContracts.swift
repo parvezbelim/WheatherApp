@@ -23,3 +23,7 @@ enum Units{
         }
     }
 }
+
+enum CityWeatherType: String{
+    case Rain,Clouds,Sun, Clear, Other
+}

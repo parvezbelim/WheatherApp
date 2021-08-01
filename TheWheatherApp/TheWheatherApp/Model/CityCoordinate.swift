@@ -7,12 +7,17 @@
 
 import Foundation
 
-struct CityCoordinates: Decodable{
+struct CityWeatherDetail: Decodable{
     let coord: Coordinates
     let name: String
     let sys: Country
-    let weather: [WeatherData]
-    let wind: WindData
+//    let weather: [WeatherData]
+//    let wind: WindData
+//    let main: MainData
+}
+
+struct Country: Decodable {
+    let country: String
 }
 
 struct MainData: Decodable{
@@ -35,9 +40,5 @@ struct WindData: Decodable{
 struct Coordinates: Decodable{
     let lat: Double
     let lon: Double
-}
-
-struct Country: Decodable {
-    let country: String
 }
 
