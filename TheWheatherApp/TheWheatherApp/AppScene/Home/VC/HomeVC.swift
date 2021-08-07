@@ -88,29 +88,19 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
         self.navigationController?.pushViewController(objCityWeatherDetail, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            
-        }
-    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
       let delete = deleteProperty(at: indexPath)
       return UISwipeActionsConfiguration(actions: [delete])
     }
 
-    // Declare this method in UIViewController Main and modify according to your need
 
     func deleteProperty(at indexpath: IndexPath) -> UIContextualAction {
       let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completon) in
-//        self.yourArray.remove(at: indexpath) // Removing from array at selected index
-
+        self.vm.removeCity(self.vm.arrLocs[indexpath.row].cityName)
+        self.vm.getCities()
         completon(true)
-        action.backgroundColor = .red //cell background color
+        action.backgroundColor = .red
       }
       return action
     }

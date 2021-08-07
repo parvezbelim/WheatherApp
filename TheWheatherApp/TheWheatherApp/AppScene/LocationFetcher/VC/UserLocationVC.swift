@@ -37,13 +37,11 @@ class UserLocationVC: UIViewController {
         mapView.showsUserLocation = false
     }
 
-    
     @IBAction func actionConfirmCity(_ sender: Any) {
         vm.saveUserCurrLocation()
         self.navigationController?.popViewController(animated: true)
     }
     
-
     /*
     // MARK: - Navigation
 

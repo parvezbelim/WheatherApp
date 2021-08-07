@@ -18,7 +18,6 @@ struct Forcast: Decodable{
     let wind: WindData
     let main: MainData
     let dt: Double
-    
 }
 
 

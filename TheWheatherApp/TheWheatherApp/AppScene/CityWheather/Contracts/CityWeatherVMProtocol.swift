@@ -8,10 +8,10 @@
 import Foundation
 
 protocol CityWeatherVMProtocol: AnyObject {
-    
     var delegate: CityWeatherOutputDelegate? { get set}
     var arrWeatherData: [CityForcastVMModel] { get set}
 
     func getCityWeatherDetail()
+    func getTitle() -> String
 }
 

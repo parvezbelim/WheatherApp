@@ -16,7 +16,7 @@ class UserLocationVM : UserLocVMProtocol{
     init(_ cityUseCase: CityRecordsUseCase){
         self.objCityUseCase = cityUseCase
     }
-    
+        
     func getWheatherForUserLoc(lat:Double,long:Double){
         let url = MyWheatherServices.getWheatherForLocation(lat: lat, lon: long).path
         AF.request(url).response { responseServer in

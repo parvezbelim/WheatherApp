@@ -11,6 +11,7 @@ protocol HomeVmProtocol: AnyObject {
     var delegate: HomeVmOutputDelegate? { get set}
     var arrLocs: [UserCurrLocVMModel] {get set}
     func getCities()
+    func removeCity(_ name: String)
 }
 
 

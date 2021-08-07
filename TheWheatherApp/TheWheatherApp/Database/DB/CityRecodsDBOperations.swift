@@ -25,6 +25,22 @@ class CityRecodsDBOperations: CityRecordsUseCase{
         completion(nil)
     }
     
+    func removeCity(cityName: String){
+        guard let context = objManagedContext else { return }
+
+        let fetchReq = NSFetchRequest<Cities>(entityName: "Cities")
+        fetchReq.predicate = NSPredicate(format: "name == %@", "\(cityName)")
+        do {
+            let cities = try context.fetch(fetchReq)
+            for city in cities{
+               context.delete(city)
+            }
+           try context.save()
+        } catch let error {
+            print(error)
+        }
+    }
+    
     func insertCurrLoc(loc: UserCurrLocVMModel) {
         guard let context = objManagedContext else { return }
         

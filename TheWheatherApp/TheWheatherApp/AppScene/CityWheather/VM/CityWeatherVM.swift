@@ -18,6 +18,10 @@ class CityWeatherVM: CityWeatherVMProtocol{
         self.currLoc = objCurrUserLoc
     }
     
+    func getTitle() -> String{
+        return "\(currLoc.cityName) Today"
+    }
+    
     func getCityWeatherDetail(){
         let url = MyWheatherServices.getForcast(city: currLoc.cityName, countryCode: currLoc.country, unit: .Celcius).path
         AF.request(url).response { responseServer in
@@ -27,15 +31,16 @@ class CityWeatherVM: CityWeatherVMProtocol{
             }
             do {
                 let objJson = try JSONSerialization.jsonObject(with: response, options: [])
-                print(objJson)
                 let data = try JSONSerialization.data(withJSONObject: objJson as Any, options: .prettyPrinted)
                 let objResponse = try JSONDecoder().decode(CityForcastList.self, from: data)
+               
                 self.arrWeatherData = objResponse.list.compactMap({ objCityWeather in
                     return CityForcastVMModel(temp: objCityWeather.main.temp,
                                               desc: objCityWeather.weather.first?.description ?? "",
                                               wind: objCityWeather.wind,
                                               humidity: objCityWeather.main.humidity,
-                                              type: CityWeatherType(rawValue: objCityWeather.weather.first?.main ?? "") ?? .Other)
+                                              type: CityWeatherType.getWeatherType(strWeatherType: objCityWeather.weather.first?.main.lowercased() ?? ""),
+                                              time: self.getTime(timeStamp: objCityWeather.dt))
                 })
                 self.delegate?.cityWheatherLoaded()
                 
@@ -45,6 +50,14 @@ class CityWeatherVM: CityWeatherVMProtocol{
             }
         }
     }
+    
+    private func getTime(timeStamp: Double) -> String{
+        let timestamp =  NSDate(timeIntervalSince1970: timeStamp)
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        return formatter.string(from: timestamp as Date)
+    }
 }
 
 struct CityForcastVMModel{
@@ -53,4 +66,5 @@ struct CityForcastVMModel{
     let wind: WindData
     let humidity: Int
     let type: CityWeatherType
+    let time: String
 }

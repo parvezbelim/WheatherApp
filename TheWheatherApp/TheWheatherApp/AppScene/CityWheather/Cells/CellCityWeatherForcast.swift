@@ -13,6 +13,7 @@ class CellCityWeatherForcast: UITableViewCell {
     @IBOutlet weak var lblHumidity: UILabel!
     @IBOutlet weak var lblWind: UILabel!
     @IBOutlet weak var lblTemperature: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,9 @@ class CellCityWeatherForcast: UITableViewCell {
         lblTemperature.text = "\(weatherData.temp) C"
         lblHumidity.text = "\(weatherData.humidity)"
         lblWind.text = "\(weatherData.wind.speed)"
-        lblWeatherDescription.text = "\(weatherData.desc)"
+        lblWeatherDescription.text = "\(weatherData.desc.capitalized)"
+        lblTime.text = weatherData.time
+        imgIconWeather.image = UIImage(systemName: weatherData.type.iconName)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

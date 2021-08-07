@@ -10,4 +10,5 @@ import Foundation
 protocol CityRecordsUseCase: Any {
     func getCityList(_ completion:([UserCurrLocVMModel]?)->())
     func insertCurrLoc(loc:UserCurrLocVMModel)
+    func removeCity(cityName: String)
 }

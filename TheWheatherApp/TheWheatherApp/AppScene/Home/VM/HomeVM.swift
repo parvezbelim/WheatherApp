@@ -23,4 +23,8 @@ class HomeVM: HomeVmProtocol{
             self.delegate?.userLocListLoaded()
         }
     }
+    
+    func removeCity(_ name: String){
+        objCityUseCase.removeCity(cityName: name)
+    }
 }
